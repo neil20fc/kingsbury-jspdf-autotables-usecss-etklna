@@ -23,20 +23,64 @@ export class AppComponent implements OnInit {
   }
 
   createDoc() {
-    this.doc.fromHTML(document.getElementById('title').innerHTML);
+    //this.doc.fromHTML(document.getElementById('title').innerHTML);
     //this.doc.fromHTML(document.getElementById("table42"), 15, 40);
-    this.doc.autoTable({
-      html: '#table42',
-      startY: 40,
-      theme: 'grid',
 
+    this.doc.autoTable({
+      html: '#tableTitle',
       useCss: true,
-      columnStyles: {
-        0: { cellWidth: 'auto' },
-        1: { cellWidth: 30 },
-      },
+      startY: 10 + 10,
+      theme: 'plain',
+      didDrawCell: function(data) {
+        if (data.column.index === 1 && data.cell.section === 'body') {
+          
+           var td = data.cell.raw;
+           var img = td.getElementsByTagName('img')[0];
+           var dim = data.cell.height - data.cell.padding('vertical');
+           var textPos = data.cell.textPos;
+           this.doc.addImage(img.src, textPos.x,  textPos.y, dim, dim);
+        }
+      }
     });
 
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+
+    this.doc.autoTable({
+      html: '#tableDetencion',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
+    this.doc.autoTable({
+      html: '#tableDatos',
+      useCss: true,
+      startY: this.doc.lastAutoTable.finalY + 10,
+    });
     this.doc.autoTable({
       html: '#tableDatos',
       useCss: true,

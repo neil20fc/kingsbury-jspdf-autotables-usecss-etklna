@@ -15,15 +15,19 @@ td:nth-child(2) {
 
 table {
   border-collapse: collapse;
+  font-size: 12px;
 }
 
-#tableDatos table,
-#tableDatos th,
-#tableDatos td {
+table.dataTable th,
+table.dataTable td {
   border: 1px solid;
   text-align: center;
 }
 
 tr.tableHead {
   background-color: #aaa8a8;
+}
+
+tr.tableBody {
+  background-color: #ffffff;
 }
