@@ -1,0 +1,29 @@
+.isCore {
+  color: red;
+  background-color: #bada55;
+}
+
+td:nth-child(2) {
+  background-color: #bef5f2;
+  border: 1px solid red;
+  width: 20%;
+}
+
+#table42 td {
+  padding: 1em;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+#tableDatos table,
+#tableDatos th,
+#tableDatos td {
+  border: 1px solid;
+  text-align: center;
+}
+
+tr.tableHead {
+  background-color: #aaa8a8;
+}
